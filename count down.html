@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>count down</title>
+	<!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style> 
+body{ 
+    text-align: center; 
+    background: #ffffff; 
+  font-family: sans-serif; 
+  font-weight: 100; 
+} 
+h1{ 
+  color: black; 
+  font-weight: 100; 
+  font-size: 40px; 
+  margin: 10px 0px 10px; 
+} 
+#counter{
+	padding: 10px; 
+    border-radius: 3px; 
+    background: #00BF96; 
+    display: inline-block;
+    
+}
+
+
+
+
+</style> 
+<body>
+	<h1>Count Down</h1>
+
+	<div class="container">
+		<h1 id="counter">15:00:0000</h1>
+	</div>
+
+
+	<script type="text/javascript">
+		var minute = 14;
+		var second = 60;
+		
+
+		setInterval(function(){
+			if(minute == 0 && second == 1 ){
+				document.getElementById("counter").innerHTML = "00:00";
+				}else{
+				second--;
+				
+				
+				if(second ==0 ){
+					minute --;
+					second = 60;
+
+
+					if(minute == 0){
+						minute= minute;
+					}
+
+				}
+
+				if(minute.toString().length == 1){
+					minute = "0"+minute;
+				}
+
+				if ( second.toString().length == 1){
+					second = "0"+second;
+				}
+
+				document.getElementById("counter").innerHTML= minute +":" + second ; 
+
+			
+		}
+	}, 1000)
+	</script>
+</body>
+
+
+
+
+
+
+</html>
